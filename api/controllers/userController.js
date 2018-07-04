@@ -22,7 +22,7 @@ exports.create_a_user = function(req, res) {
   });
 };
 
-exports.login = function (req, res){
+exports.login = function (req, res){{}{}{}{}{}
   User.findOne({ email: req.body.email, senha : req.body.senha }).exec((err, user) =>{
     if (err) {
       return res.status(400);
@@ -35,15 +35,17 @@ exports.login = function (req, res){
 }
 
 exports.mandaFoto = function(req, res) {
-  User.findOneAndUpdate({email: req.body.email}, { "$push": { "fotos": req.body.imagem }}, {new: true}, function(err, user) {
-    if (err)
-      return res.status(400).send(err);
-    return res.status(200).send({msg:ok});
+  User.findOne({},(err,user)=>{
+    User.findOneAndUpdate({email : user.email}, { "$push": { "fotos": {picture : req.body.picture, place : req.body.place}}}, {new: true}, function(err, user) {
+      if (err)
+        return res.status(400).send(err);
+      return res.status(200).send({msg:"ok"});
+    });
   });
-};
+}
 
 exports.listaFotos = function(req, res) {
-  User.findOne({ email: req.body.email}).exec((err, user) => {
+  User.findOne({ email: req.params.email}).exec((err, user) => {
     if (err) {
       return res.status(400);
     } else if (!user) {

@@ -7,8 +7,10 @@ module.exports = function(app) {
     .get(userList.list_all_users)
     .post(userList.create_a_user);
 
-  app.route('/foto')
-    .get()
+  app.route('/foto/:email')
+    .get(userList.listaFotos);
+  
+  app.route('/foto/')
     .post(userList.mandaFoto);
 
   app.route('/login')

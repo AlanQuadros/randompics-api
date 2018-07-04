@@ -20,8 +20,11 @@ var UserSchema = new Schema({
     type: Date,
     default: Date.now
   },
-  
-  fotos : [String],
+
+  fotos : [{
+    picture : String,
+    place: String
+  }],
   
 });
 
