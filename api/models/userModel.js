@@ -21,6 +21,8 @@ var UserSchema = new Schema({
     default: Date.now
   },
   
+  fotos : [String],
+  
 });
 
 module.exports = mongoose.model('Users', UserSchema);

@@ -7,6 +7,12 @@ module.exports = function(app) {
     .get(userList.list_all_users)
     .post(userList.create_a_user);
 
+  app.route('/foto')
+    .get()
+    .post(userList.mandaFoto);
+
+  app.route('/login')
+      .post(userList.login);
 
 //   app.route('/tasks/:taskId')
 //     .get(todoList.read_a_task)
