@@ -1,5 +1,8 @@
-var express = require('express'),
+var express = require('express')
+var cors = require('cors')
+
 app = express(),
+app.use(cors())
 port = process.env.PORT || 3000;
 
 mongoose = require('mongoose')
