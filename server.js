@@ -20,7 +20,6 @@ app.use(bodyParser.json());
 var routes = require('./api/routes/userRoutes');
 routes(app);
 
-
 app.listen(port);
 
 console.log('listening to port: ' + port);
