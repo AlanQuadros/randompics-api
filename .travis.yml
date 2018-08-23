@@ -5,7 +5,3 @@ node_js:
 cache:
   directories:
     - "node_modules"
-    
-before_install:
-  - mkdir travis-teste
-  - cd travis-teste
