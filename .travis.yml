@@ -9,4 +9,3 @@ cache:
 before_install:
   - mkdir travis-teste
   - cd travis-teste
-  - pwd
